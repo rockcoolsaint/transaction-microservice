@@ -23,6 +23,12 @@ class AccountTransactionsController < ApplicationController
       render json: {message: "Something went wrong"}, status: :internal_server_error
     end
   end
+
+  def update
+    @transaction = AccountTransaction.find_by(id: params[:id])
+    @transaction.update!(transaction_params)
+    render json: @transaction, status: 200
+  end
   
   private
 

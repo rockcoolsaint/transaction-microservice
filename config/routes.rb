@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   get '/transactions', to: "account_transactions#index"
   get '/transactions/:id', to: "account_transactions#show"
   post '/transactions', to: "account_transactions#create"
+  patch '/transactions', to: "account_transactions#update"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
